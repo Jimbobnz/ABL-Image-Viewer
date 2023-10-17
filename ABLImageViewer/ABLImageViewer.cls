@@ -490,11 +490,11 @@ class ABLImageViewer inherits Form:
             transformationMatrix:Translate(deltaX, deltaY).
             
             g = pictureBox1:CreateGraphics().
-            g:Clear(Color:White). // Clear the PictureBox
+            //g:Clear(Color:White). // Clear the PictureBox
             g:Transform = transformationMatrix. // Apply the transformation matrix
             g:DrawImage(originalImage, new Point(0,0)). // Draw the image with the applied transformation
 
-            
+            pictureBox1:Refresh().
             
             assign
                 lastMousePos = e:Location.
@@ -557,11 +557,11 @@ class ABLImageViewer inherits Form:
             transformationMatrix:Translate(imageCenter:X * -1, imageCenter:Y * -1).
             
             g = pictureBox1:CreateGraphics().
-            g:Clear(Color:White). // Clear the PictureBox
+            //g:Clear(Color:White). // Clear the PictureBox
             g:Transform = transformationMatrix. // Apply the transformation matrix
             g:DrawImage(originalImage, new Point(0,0)). // Draw the image with the applied transformation
          
-            //pictureBox1:Invalidate().
+            pictureBox1:Refresh().
             
             delete object imageCenter.
             
@@ -591,10 +591,11 @@ class ABLImageViewer inherits Form:
             transformationMatrix:Translate(imageCenter:X * -1, imageCenter:Y * -1).
             
             g = pictureBox1:CreateGraphics().
-            g:Clear(Color:White). // Clear the PictureBox
+            //g:Clear(Color:White). // Clear the PictureBox
             g:Transform = transformationMatrix. // Apply the transformation matrix
             g:DrawImage(originalImage, new Point(0,0)). // Draw the image with the applied transformation
-         
+            
+            pictureBox1:Refresh().
             //pictureBox1:Invalidate().
             
             delete object imageCenter.
@@ -625,11 +626,13 @@ class ABLImageViewer inherits Form:
             transformationMatrix:Translate(imageCenter:X * -1, imageCenter:Y * -1).
             
             g = pictureBox1:CreateGraphics().
-            g:Clear(Color:White). // Clear the PictureBox
+            //g:Clear(Color:White). // Clear the PictureBox
             g:Transform = transformationMatrix. // Apply the transformation matrix
             g:DrawImage(originalImage, new Point(0,0)). // Draw the image with the applied transformation
          
             //pictureBox1:Invalidate().
+            
+            pictureBox1:Refresh().
             
             delete object imageCenter.
             
@@ -706,9 +709,11 @@ class ABLImageViewer inherits Form:
             
             
             g = pictureBox1:CreateGraphics().
-            g:Clear(Color:White). // Clear the PictureBox
+            //g:Clear(Color:White). // Clear the PictureBox
             g:Transform = transformationMatrix. // Apply the transformation matrix
             g:DrawImage(originalImage, new Point(0,0)). // Draw the image with the applied transformation
+            
+            pictureBox1:Refresh().
             
             delete object g.
             
@@ -745,9 +750,11 @@ class ABLImageViewer inherits Form:
             transformationMatrix:Translate(zoomCenter:X * -1, zoomCenter:Y * -1). // Move the image back
             
             g = pictureBox1:CreateGraphics().
-            g:Clear(Color:White). // Clear the PictureBox
+            //g:Clear(Color:White). // Clear the PictureBox
             g:Transform = transformationMatrix. // Apply the transformation matrix
             g:DrawImage(originalImage, new Point(0,0)). // Draw the image with the applied transformation
+            
+            pictureBox1:Refresh().
         
         end.
         
